@@ -1,5 +1,8 @@
-/* Этап 1: рабочая раскладка на обычном CSS (потом этот файл будет собираться из SCSS) */
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -9,33 +12,77 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 { margin: 0 0 8px; line-height: 1.25; }
-p { margin: 0 0 8px; }
-img { display: block; max-width: 100%; height: auto; }
-a { color: #315efb; }
+h1,
+h2,
+h3 {
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
 
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+p {
+  margin: 0 0 8px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #315efb;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
   outline: 3px solid #f59e0b;
   outline-offset: 2px;
 }
 
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
 .visually-hidden {
-  position: absolute; width: 1px; height: 1px; overflow: hidden;
-  clip-path: inset(50%); white-space: nowrap;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-/* Шапка */
-.site-header { background: #111827; color: #ffffff; }
+.site-header {
+  background: #111827;
+  color: #ffffff;
+}
 .site-header__inner {
-  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;
-  width: 100%; max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-.site-header__title { margin: 0; font-size: 1.375rem; }
-.site-header__note { margin: 0; color: #d1d5db; }
+.site-header__title {
+  margin: 0;
+  font-size: 1.375rem;
+}
+.site-header__note {
+  margin: 0;
+  color: #d1d5db;
+}
 
-/* Основная раскладка: панель фильтров + каталог (Grid) */
 .catalog-layout {
   display: grid;
   grid-template-columns: 16rem minmax(0, 1fr);
@@ -43,73 +90,150 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   align-items: start;
   margin: 32px 0;
 }
+@media (max-width: 960px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+}
 
-/* Сетка карточек (Grid) */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   gap: 16px;
 }
+@media (max-width: 560px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+    gap: 12px;
+  }
+}
 
-/* Панель фильтров */
+.site-footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 16px 0;
+  margin-top: 32px;
+}
+.site-footer p {
+  margin: 0;
+}
+
 .filters {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   padding: 16px;
 }
-.filters__title { font-size: 1.125rem; }
-.filters__group { border: 0; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-.filters__group legend { font-weight: 700; padding: 0; margin-bottom: 6px; }
-.filters__label { font-weight: 700; }
-.filters__check { display: flex; align-items: center; gap: 8px; }
-.filters input[type="number"], .filters select {
-  width: 100%; padding: 8px 10px; border: 1px solid #9ca3af; border-radius: 8px; font: inherit;
+.filters__title {
+  font-size: 1.125rem;
 }
-.filters__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+}
+.filters__group legend {
+  margin-bottom: 6px;
+  padding: 0;
+  font-weight: 700;
+}
+.filters__label {
+  font-weight: 700;
+}
+.filters__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filters__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filters input[type=number],
+.filters select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  font: inherit;
+}
 
-/* Кнопки */
 .btn {
-  display: inline-block; background: #315efb; color: #ffffff; border: 1px solid #315efb;
-  border-radius: 10px; padding: 8px 16px; font: inherit; cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #315efb;
+  border-radius: 10px;
+  background: #315efb;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
 }
-.btn:hover { background: #2449c9; }
-.btn--secondary { background: #ffffff; color: #315efb; }
-.btn--secondary:hover { background: #e9efff; }
+.btn:hover {
+  background: #2449c9;
+}
+.btn--secondary {
+  background: #ffffff;
+  color: #315efb;
+}
+.btn--secondary:hover {
+  background: #e9efff;
+}
 
-/* Информационный блок */
 .catalog-info {
-  display: flex; flex-wrap: wrap; gap: 8px 24px;
-  background: #e9efff; border-radius: 14px; padding: 16px; margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #e9efff;
 }
-.catalog-info p { margin: 0; }
+.catalog-info p {
+  margin: 0;
+}
 
-/* Карточка товара */
 .product-card {
-  background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
 }
-.product-card__image { width: 100%; }
-.product-card__body { padding: 16px; }
-.product-card__title { font-size: 1rem; }
-.product-card__category {
-  display: inline-block; background: #e9efff; color: #315efb; border-radius: 999px;
-  padding: 2px 12px; font-size: 0.85rem;
+.product-card__image {
+  width: 100%;
 }
-.product-card__meta { display: flex; justify-content: space-between; gap: 8px; margin: 8px 0 0; color: #6b7280; }
-
-/* Подвал */
-.site-footer { background: #111827; color: #d1d5db; padding: 16px 0; margin-top: 32px; }
-.site-footer p { margin: 0; }
-
-/* Breakpoint 1: на планшете фильтры уходят над каталог */
-@media (max-width: 960px) {
-  .catalog-layout { grid-template-columns: 1fr; }
+.product-card__body {
+  padding: 16px;
 }
-
-/* Breakpoint 2: на телефоне карточки плотнее */
 @media (max-width: 560px) {
-  .container { padding: 0 12px; }
-  .products { grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr)); gap: 12px; }
-  .product-card__body { padding: 12px; }
-  .product-card__meta { flex-direction: column; gap: 0; }
+  .product-card__body {
+    padding: 12px;
+  }
+}
+.product-card__title {
+  font-size: 1rem;
+}
+.product-card__category {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: #e9efff;
+  color: #315efb;
+  font-size: 0.85rem;
+}
+.product-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+@media (max-width: 560px) {
+  .product-card__meta {
+    flex-direction: column;
+    gap: 0;
+  }
 }
