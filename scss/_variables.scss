@@ -1,0 +1,20 @@
+// ===== Значения из data/theme.json =====
+$accent: #315efb;
+$surface: #ffffff;
+$background: #f5f7fb;
+$text: #1f2937;
+$radius: 14px;
+$space: 16px;
+
+// ===== Дополнительные значения (в theme.json их нет) =====
+$dark: #111827;
+$muted: #6b7280;
+$border: #e5e7eb;
+$accent-soft: #e9efff;
+$accent-dark: #2449c9;
+$focus: #f59e0b;
+
+// ===== Размеры и breakpoint'ы =====
+$container-width: 1200px;
+$bp-tablet: 960px;
+$bp-mobile: 560px;

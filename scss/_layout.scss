@@ -1,0 +1,68 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// ===== Шапка =====
+.site-header {
+  background: $dark;
+  color: $surface;
+
+  &__inner {
+    @include container;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space;
+    padding-top: $space;
+    padding-bottom: $space;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: rem(22px);
+  }
+
+  &__note {
+    margin: 0;
+    color: #d1d5db;
+  }
+}
+
+// ===== Основная раскладка: панель фильтров + каталог (Grid) =====
+.catalog-layout {
+  display: grid;
+  grid-template-columns: rem(256px) minmax(0, 1fr);
+  gap: space(1.5);
+  align-items: start;
+  margin: space(2) 0;
+
+  // Breakpoint 1: на планшете фильтры уходят над каталог
+  @include respond($bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ===== Сетка карточек (Grid) =====
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(rem(224px), 1fr));
+  gap: $space;
+
+  // Breakpoint 2: на телефоне карточки плотнее
+  @include respond($bp-mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(rem(150px), 1fr));
+    gap: space(0.75);
+  }
+}
+
+// ===== Подвал =====
+.site-footer {
+  background: $dark;
+  color: #d1d5db;
+  padding: $space 0;
+  margin-top: space(2);
+
+  p {
+    margin: 0;
+  }
+}

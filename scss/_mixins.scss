@@ -1,0 +1,33 @@
+@use "sass:math";
+@use "variables" as *;
+
+// Функция: переводит пиксели в rem (16px = 1rem)
+@function rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+// Функция: кратные интервалы от базового $space (space(1.5) = 24px)
+@function space($n) {
+  @return $space * $n;
+}
+
+// Mixin: адаптивный контейнер ограниченной ширины
+@mixin container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 space(1.5);
+}
+
+// Mixin: видимое состояние фокуса
+@mixin focus-ring {
+  outline: 3px solid $focus;
+  outline-offset: 2px;
+}
+
+// Mixin: media query по максимальной ширине
+@mixin respond($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}

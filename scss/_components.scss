@@ -1,0 +1,140 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// ===== Панель фильтров =====
+.filters {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: $space;
+
+  &__title {
+    font-size: rem(18px);
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0 0 $space;
+    padding: 0;
+    border: 0;
+
+    legend {
+      margin-bottom: 6px;
+      padding: 0;
+      font-weight: 700;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    gap: space(0.5);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(0.5);
+  }
+
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #9ca3af;
+    border-radius: 8px;
+    font: inherit;
+  }
+}
+
+// ===== Кнопки =====
+.btn {
+  display: inline-block;
+  padding: space(0.5) $space;
+  border: 1px solid $accent;
+  border-radius: 10px;
+  background: $accent;
+  color: $surface;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background: $accent-dark;
+  }
+
+  &--secondary {
+    background: $surface;
+    color: $accent;
+
+    &:hover {
+      background: $accent-soft;
+    }
+  }
+}
+
+// ===== Информационный блок =====
+.catalog-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(0.5) space(1.5);
+  margin-bottom: $space;
+  padding: $space;
+  border-radius: $radius;
+  background: $accent-soft;
+
+  p {
+    margin: 0;
+  }
+}
+
+// ===== Карточка товара =====
+.product-card {
+  overflow: hidden;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__body {
+    padding: $space;
+
+    @include respond($bp-mobile) {
+      padding: space(0.75);
+    }
+  }
+
+  &__title {
+    font-size: rem(16px);
+  }
+
+  &__category {
+    display: inline-block;
+    padding: 2px space(0.75);
+    border-radius: 999px;
+    background: $accent-soft;
+    color: $accent;
+    font-size: rem(13.6px);
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: space(0.5);
+    margin: space(0.5) 0 0;
+    color: $muted;
+
+    @include respond($bp-mobile) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}
