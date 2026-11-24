@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог товаров</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1 class="site-header__title">Каталог товаров</h1>
+      <p class="site-header__note">Практическая работа №2</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="catalog-layout">
+      <aside class="filters" aria-label="Фильтры каталога">
+        <h2 class="filters__title">Фильтры</h2>
+        <form action="#catalog" method="get">
+          <fieldset class="filters__group">
+            <legend>Категория</legend>
+            <label class="filters__check"><input type="checkbox" name="category" value="Книги"> Книги</label>
+            <label class="filters__check"><input type="checkbox" name="category" value="Курсы"> Курсы</label>
+            <label class="filters__check"><input type="checkbox" name="category" value="Инструменты"> Инструменты</label>
+          </fieldset>
+
+          <div class="filters__group">
+            <label class="filters__label" for="price-min">Цена от</label>
+            <input id="price-min" name="price-min" type="number" min="0" step="1" placeholder="575">
+          </div>
+
+          <div class="filters__group">
+            <label class="filters__label" for="price-max">Цена до</label>
+            <input id="price-max" name="price-max" type="number" min="0" step="1" placeholder="2020">
+          </div>
+
+          <div class="filters__group">
+            <label class="filters__label" for="sort">Сортировка</label>
+            <select id="sort" name="sort">
+              <option value="id">По номеру</option>
+              <option value="price">По цене</option>
+              <option value="rating">По рейтингу</option>
+            </select>
+          </div>
+
+          <div class="filters__actions">
+            <button class="btn" type="submit">Применить</button>
+            <button class="btn btn--secondary" type="reset">Сбросить</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+        <h2 id="catalog-title" class="visually-hidden">Список товаров</h2>
+
+        <div class="catalog-info">
+          <p>Всего товаров: <strong>18</strong></p>
+          <p>Категории: <strong>Книги, Курсы, Инструменты</strong></p>
+          <p>Цена: <strong>от 575 до 2020</strong></p>
+        </div>
+
+        <div class="products">
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-01.svg" alt="Изображение: Учебный товар 1" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 1</h3>
+            <p class="product-card__category">Книги</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>575</strong></span>
+              <span>Рейтинг: <strong>4.0</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-02.svg" alt="Изображение: Учебный товар 2" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 2</h3>
+            <p class="product-card__category">Курсы</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>660</strong></span>
+              <span>Рейтинг: <strong>4.2</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-03.svg" alt="Изображение: Учебный товар 3" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 3</h3>
+            <p class="product-card__category">Инструменты</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>745</strong></span>
+              <span>Рейтинг: <strong>4.4</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-01.svg" alt="Изображение: Учебный товар 4" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 4</h3>
+            <p class="product-card__category">Книги</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>830</strong></span>
+              <span>Рейтинг: <strong>4.6</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-02.svg" alt="Изображение: Учебный товар 5" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 5</h3>
+            <p class="product-card__category">Курсы</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>915</strong></span>
+              <span>Рейтинг: <strong>4.8</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-03.svg" alt="Изображение: Учебный товар 6" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 6</h3>
+            <p class="product-card__category">Инструменты</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1000</strong></span>
+              <span>Рейтинг: <strong>3.8</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-01.svg" alt="Изображение: Учебный товар 7" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 7</h3>
+            <p class="product-card__category">Книги</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1085</strong></span>
+              <span>Рейтинг: <strong>4.0</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-02.svg" alt="Изображение: Учебный товар 8" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 8</h3>
+            <p class="product-card__category">Курсы</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1170</strong></span>
+              <span>Рейтинг: <strong>4.2</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-03.svg" alt="Изображение: Учебный товар 9" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 9</h3>
+            <p class="product-card__category">Инструменты</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1255</strong></span>
+              <span>Рейтинг: <strong>4.4</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-01.svg" alt="Изображение: Учебный товар 10" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 10</h3>
+            <p class="product-card__category">Книги</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1340</strong></span>
+              <span>Рейтинг: <strong>4.6</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-02.svg" alt="Изображение: Учебный товар 11" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 11</h3>
+            <p class="product-card__category">Курсы</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1425</strong></span>
+              <span>Рейтинг: <strong>4.8</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-03.svg" alt="Изображение: Учебный товар 12" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 12</h3>
+            <p class="product-card__category">Инструменты</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1510</strong></span>
+              <span>Рейтинг: <strong>3.8</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-01.svg" alt="Изображение: Учебный товар 13" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 13</h3>
+            <p class="product-card__category">Книги</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1595</strong></span>
+              <span>Рейтинг: <strong>4.0</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-02.svg" alt="Изображение: Учебный товар 14" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 14</h3>
+            <p class="product-card__category">Курсы</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1680</strong></span>
+              <span>Рейтинг: <strong>4.2</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-03.svg" alt="Изображение: Учебный товар 15" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 15</h3>
+            <p class="product-card__category">Инструменты</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1765</strong></span>
+              <span>Рейтинг: <strong>4.4</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-01.svg" alt="Изображение: Учебный товар 16" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 16</h3>
+            <p class="product-card__category">Книги</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1850</strong></span>
+              <span>Рейтинг: <strong>4.6</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-02.svg" alt="Изображение: Учебный товар 17" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 17</h3>
+            <p class="product-card__category">Курсы</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>1935</strong></span>
+              <span>Рейтинг: <strong>4.8</strong></span>
+            </p>
+          </div>
+        </article>
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-03.svg" alt="Изображение: Учебный товар 18" width="900" height="520" loading="lazy">
+          <div class="product-card__body">
+            <h3 class="product-card__title">Учебный товар 18</h3>
+            <p class="product-card__category">Инструменты</p>
+            <p class="product-card__meta">
+              <span>Цена: <strong>2020</strong></span>
+              <span>Рейтинг: <strong>3.8</strong></span>
+            </p>
+          </div>
+        </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Практическая работа №2. Технологии разработки программного обеспечения.</p>
+    </div>
+  </footer>
+</body>
+</html>
